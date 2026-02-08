@@ -138,8 +138,10 @@ spec:
           name: sonarqube
           subPath: data
       env:
+        {{- if .Values.prometheusExporter.proxy.enabled }}
         {{- with (include "sonarqube.prometheusExporterProxy.env" .) }}
         {{- . | nindent 8 }}
+        {{- end }}
         {{- end }}
         {{- (include "sonarqube.combined_env" . | fromJsonArray) | toYaml | trim | nindent 8 }}
     {{- end }}

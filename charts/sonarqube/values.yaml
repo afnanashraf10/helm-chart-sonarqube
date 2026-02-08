@@ -384,9 +384,11 @@ prometheusExporter:
   #     - pattern: ".*"
   # image: curlimages/curl:8.2.1
   # For use behind a corporate proxy when downloading prometheus
-  # httpProxy: ""
-  # httpsProxy: ""
-  # noProxy: ""
+  proxy:
+    enabled: failureThreshold
+    # httpProxy: ""
+    # httpsProxy: ""
+    # noProxy: ""
   # Reuse default initcontainers.securityContext that match restricted pod security standard
   # securityContext: {}
 
