@@ -138,7 +138,7 @@ spec:
           name: sonarqube
           subPath: data
       env:
-        {{- if .Values.prometheusExporter.proxy.enabled }}
+        {{- if or .Values.proxy.enabled .Values.prometheusExporter.proxy.enabled }}
         {{- with (include "sonarqube.prometheusExporterProxy.env" .) }}
         {{- . | nindent 8 }}
         {{- end }}
@@ -204,7 +204,7 @@ spec:
           mountPath: /root
         {{- end }}
       env:
-        {{- if .Values.proxy.enabled }}
+        {{- if or .Values.proxy.enabled .Values.plugins.proxy.enabled }}
         {{- with (include "sonarqube.install-plugins-proxy.env" .) }}
         {{- . | nindent 8 }}
         {{- end }}
