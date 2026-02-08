@@ -533,7 +533,7 @@ The following table lists the configurable parameters of the SonarQube chart and
 | ---------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | `plugins.install`            | Link(s) to the plugin JARs to download and install                              | `[]`                                                                   |
 | `plugins.resources`          | Plugin Pod resource requests & limits                                           | `{}`                                                                   |
-| `plugins.proxy.enabled`          | Enable Proxy for downloading install plugins. When set to `true`                       | `false`                                                                   |
+| `plugins.proxy.enabled`          | Enable Proxy for install plugins. When set to `true`                       | `false`                                                                   |
 | `plugins.proxy.httpProxy`          | For use behind a corporate proxy when downloading plugins                       | `""`                                                                   |
 | `plugins.proxy.httpsProxy`         | For use behind a corporate proxy when downloading plugins                       | `""`                                                                   |
 | `plugins.proxy.noProxy`            | For use behind a corporate proxy when downloading plugins                       | `""`                                                                   |
