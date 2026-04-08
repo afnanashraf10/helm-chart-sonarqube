@@ -22,8 +22,4 @@ global:
       sonarqube:
         registry: __ACR_REGISTRY_PLACEHOLDER__
         image: sonarqube
-        tag: 2025.6.0-enterprise
-      postgresql:
-        registry: __ACR_REGISTRY_PLACEHOLDER__
-        image: bitnamilegacy/postgresql
-        tag: 11.14.0
+        tag: 2026.2.0-enterprise

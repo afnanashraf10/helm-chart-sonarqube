@@ -7,7 +7,7 @@ metadata:
   name: config-values.yaml-sonarqube-monitoring-passcode
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: config-values.yaml
     heritage: Helm
 type: Opaque
@@ -22,7 +22,7 @@ metadata:
   name: config-values.yaml-sonarqube-http-proxies
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: config-values.yaml
     heritage: Helm
 type: Opaque
@@ -41,7 +41,7 @@ metadata:
   name: config-values.yaml-sonarqube-config
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: config-values.yaml
     heritage: Helm
 data:
@@ -58,7 +58,7 @@ metadata:
   name: config-values.yaml-sonarqube-init-sysctl
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: config-values.yaml
     heritage: Helm
 data:
@@ -105,7 +105,7 @@ metadata:
   name: config-values.yaml-sonarqube-install-plugins
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: config-values.yaml
     heritage: Helm
 data:
@@ -118,7 +118,7 @@ metadata:
   name: config-values.yaml-sonarqube
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: config-values.yaml
     heritage: Helm
 spec:
@@ -139,7 +139,7 @@ metadata:
   name: config-values.yaml-sonarqube
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: config-values.yaml
     heritage: Helm
     app.kubernetes.io/name: config-values.yaml
@@ -147,7 +147,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: sonarqube
     app.kubernetes.io/component: config-values.yaml-sonarqube
-    app.kubernetes.io/version: "2025.6.0-enterprise"
+    app.kubernetes.io/version: "2026.2.0-enterprise"
 spec:
   replicas: 1
   revisionHistoryLimit: 10
@@ -159,10 +159,10 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: f8e4fd0f411f789277fd2f89b45095c0a57b0bb9f2b809a17211a1f9491640f5
-        checksum/init-sysctl: 76a671673ccd3f79fa98363dceeef0ff23964f397be345b9abd228265bb7d7a2
-        checksum/plugins: 7b7f1722bcda08536cafc3346848efe6c9185cc9c77126a206fe5ddb4b7a7a75
-        checksum/secret: ec22194663a43d20c3672d227a4a92061e52c4660b7d33444ddd34638e221a98
+        checksum/config: 87c7bd9fc2809c9772b0102e099a691c59abe3e7e23cb0e5c7dbe43324dbdc65
+        checksum/init-sysctl: 59c0906e1952302c3b512e94bd44e1df7602a492ad0c3dc264a82c46458acea5
+        checksum/plugins: e31a2dbab45d678bbbb390bb8bdb24bea1c37535d1dabffc5764459197c783d4
+        checksum/secret: 8a3f3dbad02772b2fb804438e9214cef73b853bb336fd39d920ad017364f9c4f
       labels:
         app: sonarqube
         release: config-values.yaml
@@ -172,7 +172,7 @@ spec:
         fsGroup: 0
       initContainers:
         - name: init-sysctl
-          image: sonarqube:2025.6.0-enterprise
+          image: sonarqube:2026.2.0-enterprise
           imagePullPolicy: IfNotPresent
           securityContext:
             privileged: true
@@ -190,7 +190,7 @@ spec:
             - name: SONAR_CE_JAVAOPTS
               value: ""
         - name: concat-properties
-          image: sonarqube:2025.6.0-enterprise
+          image: sonarqube:2026.2.0-enterprise
           imagePullPolicy: IfNotPresent
           command:
             - sh
@@ -235,7 +235,7 @@ spec:
               value: ""
       containers:
         - name: sonarqube
-          image: sonarqube:2025.6.0-enterprise
+          image: sonarqube:2026.2.0-enterprise
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
@@ -252,7 +252,7 @@ spec:
               memory: 2048M
           env:
             - name: SONAR_HELM_CHART_VERSION
-              value: 2026.1.0
+              value: 2026.2.0
             - name: SONAR_WEB_SYSTEMPASSCODE
               valueFrom:
                 secretKeyRef:
@@ -271,7 +271,7 @@ spec:
               - sh
               - -c
               - |
-                wget --no-proxy --quiet -O /dev/null --timeout=1 --header="X-Sonar-Passcode: $SONAR_WEB_SYSTEMPASSCODE" "http://localhost:9000/api/system/liveness"
+                curl --noproxy "*" -fsS -o /dev/null --max-time 1 -H "X-Sonar-Passcode: $SONAR_WEB_SYSTEMPASSCODE" "http://localhost:9000/api/system/liveness"
             failureThreshold: 6
             initialDelaySeconds: 60
             periodSeconds: 30
@@ -285,7 +285,7 @@ spec:
                 #!/bin/bash
                 # A Sonarqube container is considered ready if the status is UP, DB_MIGRATION_NEEDED or DB_MIGRATION_RUNNING
                 # status about migration are added to prevent the node to be kill while SonarQube is upgrading the database.
-                if wget --no-proxy -qO- http://localhost:9000/api/system/status | grep -q -e '"status":"UP"' -e '"status":"DB_MIGRATION_NEEDED"' -e '"status":"DB_MIGRATION_RUNNING"'; then
+                if curl --noproxy "*" -s http://localhost:9000/api/system/status | grep -q -e '"status":"UP"' -e '"status":"DB_MIGRATION_NEEDED"' -e '"status":"DB_MIGRATION_RUNNING"'; then
                   exit 0
                 fi
                 exit 1
@@ -384,23 +384,25 @@ metadata:
     "sidecar.istio.io/inject": "false"
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: config-values.yaml
     heritage: Helm
 spec:
   automountServiceAccountToken: false
   containers:
     - name: config-values.yaml-ui-test
-      image: "sonarqube:2025.6.0-enterprise"
+      image: "sonarqube:2026.2.0-enterprise"
       imagePullPolicy: IfNotPresent
-      command: ['wget']
+      command: ['curl']
       args: [
         '--retry-connrefused',
-        '--waitretry=1',
-        '--timeout=5',
-        '-t',
+        '--retry',
         '12',
-        '-qO-',
+        '--retry-delay',
+        '1',
+        '--max-time',
+        '5',
+        '-s',
         'config-values.yaml-sonarqube:9000/api/system/status'
         ]
       resources:

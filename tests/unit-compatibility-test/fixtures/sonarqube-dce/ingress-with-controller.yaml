@@ -6,7 +6,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-search
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 spec:
@@ -23,7 +23,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-app
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 spec:
@@ -38,10 +38,10 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
@@ -56,7 +56,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-monitoring-passcode
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 type: Opaque
@@ -70,7 +70,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 type: Opaque
@@ -84,7 +84,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-jwt
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 type: Opaque
@@ -99,7 +99,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-http-proxies
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 type: Opaque
@@ -116,10 +116,10 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
@@ -134,7 +134,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-app-config
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 data:
@@ -147,7 +147,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-search-config
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 data:
@@ -160,7 +160,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-init-fs
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 data:
@@ -176,7 +176,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-init-sysctl
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 data:
@@ -223,7 +223,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-install-plugins
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 data:
@@ -236,7 +236,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-jdbc-config
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 data:
@@ -248,10 +248,10 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
   name: ingress-with-controller.yaml-ingress-nginx
@@ -332,10 +332,10 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
   name: ingress-with-controller.yaml-ingress-nginx
@@ -353,10 +353,10 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
@@ -447,10 +447,10 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
@@ -470,10 +470,10 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
@@ -497,10 +497,10 @@ kind: Service
 metadata:
   annotations:
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
@@ -534,7 +534,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 
@@ -556,7 +556,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-headless
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 
@@ -581,7 +581,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-search
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 
@@ -607,7 +607,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-search-headless
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 
@@ -632,10 +632,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
@@ -653,10 +653,10 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: ingress-nginx-4.14.1
+        helm.sh/chart: ingress-nginx-4.14.3
         app.kubernetes.io/name: ingress-nginx
         app.kubernetes.io/instance: ingress-with-controller.yaml
-        app.kubernetes.io/version: "1.14.1"
+        app.kubernetes.io/version: "1.14.3"
         app.kubernetes.io/part-of: ingress-nginx
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/component: controller
@@ -664,7 +664,7 @@ spec:
       dnsPolicy: ClusterFirst
       containers:
         - name: controller
-          image: registry.k8s.io/ingress-nginx/controller:v1.14.1@sha256:f95a79b85fb93ac3de752c71a5c27d5ceae10a18b61904dec224c1c6a4581e47
+          image: registry.k8s.io/ingress-nginx/controller:v1.14.3@sha256:82917be97c0939f6ada1717bb39aa7e66c229d6cfb10dcfc8f1bd42f9efe0f81
           imagePullPolicy: IfNotPresent
           lifecycle: 
             preStop:
@@ -760,7 +760,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-app
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
     app.kubernetes.io/name: ingress-with-controller.yaml
@@ -769,7 +769,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: sonarqube
     app.kubernetes.io/component: ingress-with-controller.yaml-sonarqube-dce
-    app.kubernetes.io/version: "2025.6.0-datacenter-app"
+    app.kubernetes.io/version: "2026.2.0-datacenter-app"
 spec:
   replicas: 2
   revisionHistoryLimit: 
@@ -786,9 +786,9 @@ spec:
         release: ingress-with-controller.yaml
         sonarqube.datacenter/type: "app"
       annotations:
-        checksum/plugins: 21868c5fe5dfe43397d55572c45c59a2b4d64de1043b278213a19ce732944728
-        checksum/config: 59112892bcf69db734c228c343837f56640bd9bd80cb5ba9fe4894f30f32be99
-        checksum/secret: cd0de71a5bfe35e03e3a876a91332427ffeb9ee6d666edfa5fed684c91265366
+        checksum/plugins: e64fd8d47d037ce287c357e7baef7440b5327536538a3f6046e1dff757bf2f46
+        checksum/config: 04ccabc0b3420b755df818c365558f0ac6a72e8e0665da25604a0e38ea7abd6c
+        checksum/secret: 0aca87236fe3d48f0d7b0d5d14cea6e85829acb5772eb19db6ea830204a1643c
     spec:
       automountServiceAccountToken: false
       initContainers:
@@ -796,7 +796,7 @@ spec:
         fsGroup: 0
       containers:
         - name: sonarqube-dce
-          image: sonarqube:2025.6.0-datacenter-app
+          image: sonarqube:2026.2.0-datacenter-app
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
@@ -824,7 +824,7 @@ spec:
             - name: SONAR_LOG_JSONOUTPUT
               value: "false"
             - name: SONAR_HELM_CHART_VERSION
-              value: 2026.1.0
+              value: 2026.2.0
             - name: SONAR_CLUSTER_SEARCH_HOSTS
               value: "ingress-with-controller.yaml-sonarqube-dce-search"
             - name: SONAR_CLUSTER_KUBERNETES
@@ -860,7 +860,7 @@ spec:
               - -c
               - |-
                 host="$(hostname -i || echo '127.0.0.1')"
-                wget --no-proxy --quiet -O /dev/null --timeout=1 --header="X-Sonar-Passcode: $SONAR_WEB_SYSTEMPASSCODE" "http://${host}:9000/api/system/liveness"
+                curl --noproxy "*" -fsS -o /dev/null --max-time 1 -H "X-Sonar-Passcode: $SONAR_WEB_SYSTEMPASSCODE" "http://${host}:9000/api/system/liveness"
             failureThreshold: 6
             initialDelaySeconds: 0
             periodSeconds: 30
@@ -875,7 +875,7 @@ spec:
                 # A Sonarqube container is considered ready if the status is UP, DB_MIGRATION_NEEDED or DB_MIGRATION_RUNNING
                 # status about migration are added to prevent the node to be kill while sonarqube is upgrading the database.
                 host="$(hostname -i || echo '127.0.0.1')"
-                if wget --no-proxy -qO- http://${host}:9000/api/system/status | grep -q -e '"status":"UP"' -e '"status":"DB_MIGRATION_NEEDED"' -e '"status":"DB_MIGRATION_RUNNING"'; then
+                if curl --noproxy "*" -s http://${host}:9000/api/system/status | grep -q -e '"status":"UP"' -e '"status":"DB_MIGRATION_NEEDED"' -e '"status":"DB_MIGRATION_RUNNING"'; then
                   exit 0
                 fi
                 exit 1
@@ -937,7 +937,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce-search
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
     app.kubernetes.io/name: "ingress-with-controller.yaml"
@@ -946,7 +946,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: sonarqube
     app.kubernetes.io/component: ingress-with-controller.yaml-sonarqube-dce
-    app.kubernetes.io/version: "2025.6.0-datacenter-search"
+    app.kubernetes.io/version: "2026.2.0-datacenter-search"
 spec:
   podManagementPolicy : Parallel
   replicas: 3
@@ -975,15 +975,15 @@ spec:
         release: ingress-with-controller.yaml
         sonarqube.datacenter/type: "search"
       annotations:
-        checksum/init-sysctl: be1bab961fa9fb05c4ae39f8cb616a012269fe287d4ae3c4cdda4d259c24a4ed
-        checksum/init-fs: 255659c72f4787bcc63a9fcebb64450d5d96146d6aecd3928f3b93f5ea427448
-        checksum/config: 59112892bcf69db734c228c343837f56640bd9bd80cb5ba9fe4894f30f32be99
-        checksum/secret: cd0de71a5bfe35e03e3a876a91332427ffeb9ee6d666edfa5fed684c91265366
+        checksum/init-sysctl: 528dbd373dd413d85bb6517b7a15960dce354d5d052e1d57ea6d26cfee577e24
+        checksum/init-fs: c3dc8b038c7d9c391cbab969c9226f524757b197d708054bb6c05eb1c3b911d3
+        checksum/config: 04ccabc0b3420b755df818c365558f0ac6a72e8e0665da25604a0e38ea7abd6c
+        checksum/secret: 0aca87236fe3d48f0d7b0d5d14cea6e85829acb5772eb19db6ea830204a1643c
     spec:
       automountServiceAccountToken: false
       initContainers:
         - name: init-sysctl
-          image: sonarqube:2025.6.0-datacenter-app
+          image: sonarqube:2026.2.0-datacenter-app
           imagePullPolicy: IfNotPresent
           securityContext:
             privileged: true
@@ -998,7 +998,7 @@ spec:
             - name: init-sysctl
               mountPath: /tmp/scripts/
         - name: init-fs
-          image: sonarqube:2025.6.0-datacenter-app
+          image: sonarqube:2026.2.0-datacenter-app
           imagePullPolicy: IfNotPresent
           securityContext:
             capabilities:
@@ -1039,7 +1039,7 @@ spec:
         fsGroup: 0
       containers:
         - name: sonarqube-dce-search
-          image: "sonarqube:2025.6.0-datacenter-search"
+          image: "sonarqube:2026.2.0-datacenter-search"
           imagePullPolicy: IfNotPresent
           ports:
             - name: search-port
@@ -1077,7 +1077,7 @@ spec:
                 #!/bin/bash
                 # A Sonarqube search node container is considered live if http call returns 200
                 host="$(hostname -i || echo '127.0.0.1')"
-                if wget --auth-no-challenge --no-proxy -qO- "http://${host}:9001/_cluster/health?local=true" | grep -q -e '"status":"green"' -e '"status":"yellow"'; then
+                if curl --noproxy "*" -sS "http://${host}:9001/_cluster/health?local=true" | grep -q -e '"status":"green"' -e '"status":"yellow"'; then
                   exit 0
                 fi
                 exit 1
@@ -1094,7 +1094,7 @@ spec:
                 #!/bin/bash
                 # A Sonarqube search node container is considered ready if the status of embedded ES is green or yellow
                 host="$(hostname -i || echo '127.0.0.1')"
-                if wget --auth-no-challenge --no-proxy -qO- "http://${host}:9001/_cluster/health?wait_for_status=yellow&timeout=50s" | grep -q -e '"status":"green"' -e '"status":"yellow"'; then
+                if curl --noproxy "*" -s "http://${host}:9001/_cluster/health?wait_for_status=yellow&timeout=50s" | grep -q -e '"status":"green"' -e '"status":"yellow"'; then
                   exit 0
                 fi
                 exit 1
@@ -1111,7 +1111,7 @@ spec:
                 #!/bin/bash
                 # A Sonarqube search node container is considered started if http call returns 200
                 host="$(hostname -i || echo '127.0.0.1')"
-                if wget --auth-no-challenge --no-proxy -qO- "http://${host}:9001/_cluster/health?local=true" | grep -q -e '"status":"green"' -e '"status":"yellow"'; then
+                if curl --noproxy "*" -sS "http://${host}:9001/_cluster/health?local=true" | grep -q -e '"status":"green"' -e '"status":"yellow"'; then
                   exit 0
                 fi
                 exit 1
@@ -1170,10 +1170,10 @@ apiVersion: networking.k8s.io/v1
 kind: IngressClass
 metadata:
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
@@ -1188,7 +1188,7 @@ metadata:
   name: ingress-with-controller.yaml-sonarqube-dce
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
     traffic-type: external
@@ -1222,10 +1222,10 @@ kind: ValidatingWebhookConfiguration
 metadata:
   annotations:
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
@@ -1268,10 +1268,10 @@ metadata:
     "helm.sh/hook": pre-install,pre-upgrade,post-install,post-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
@@ -1286,10 +1286,10 @@ metadata:
     "helm.sh/hook": pre-install,pre-upgrade,post-install,post-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
@@ -1311,10 +1311,10 @@ metadata:
     "helm.sh/hook": pre-install,pre-upgrade,post-install,post-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
@@ -1337,10 +1337,10 @@ metadata:
     "helm.sh/hook": pre-install,pre-upgrade,post-install,post-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
@@ -1363,10 +1363,10 @@ metadata:
     "helm.sh/hook": pre-install,pre-upgrade,post-install,post-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
@@ -1390,23 +1390,25 @@ metadata:
     "sidecar.istio.io/inject": "false"
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: ingress-with-controller.yaml
     heritage: Helm
 spec:
   automountServiceAccountToken: false
   containers:
     - name: ingress-with-controller.yaml-ui-test
-      image: "sonarqube:2025.6.0-datacenter-app"
+      image: "sonarqube:2026.2.0-datacenter-app"
       imagePullPolicy: IfNotPresent
-      command: ['wget']
+      command: ['curl']
       args: [
         '--retry-connrefused',
-        '--waitretry=1',
-        '--timeout=5',
-        '-t',
+        '--retry',
         '1200',
-        '-qO-',
+        '--retry-delay',
+        '1',
+        '--max-time',
+        '5',
+        '-s',
         'ingress-with-controller.yaml-sonarqube-dce:9000/api/system/status'
         ]
       resources:
@@ -1430,10 +1432,10 @@ metadata:
     "helm.sh/hook": pre-install,pre-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
@@ -1443,17 +1445,17 @@ spec:
     metadata:
       name: ingress-with-controller.yaml-ingress-nginx-admission-create
       labels:
-        helm.sh/chart: ingress-nginx-4.14.1
+        helm.sh/chart: ingress-nginx-4.14.3
         app.kubernetes.io/name: ingress-nginx
         app.kubernetes.io/instance: ingress-with-controller.yaml
-        app.kubernetes.io/version: "1.14.1"
+        app.kubernetes.io/version: "1.14.3"
         app.kubernetes.io/part-of: ingress-nginx
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/component: admission-webhook
     spec:
       containers:
         - name: create
-          image: registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.5@sha256:03a00eb0e255e8a25fa49926c24cde0f7e12e8d072c445cdf5136ec78b546285
+          image: registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.7@sha256:7c74a715af2c94cb734785b4d3ea1357b4f02b88e1e123c622a9cb68b62f669c
           imagePullPolicy: IfNotPresent
           args:
             - create
@@ -1492,10 +1494,10 @@ metadata:
     "helm.sh/hook": post-install,post-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
   labels:
-    helm.sh/chart: ingress-nginx-4.14.1
+    helm.sh/chart: ingress-nginx-4.14.3
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-with-controller.yaml
-    app.kubernetes.io/version: "1.14.1"
+    app.kubernetes.io/version: "1.14.3"
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
@@ -1505,17 +1507,17 @@ spec:
     metadata:
       name: ingress-with-controller.yaml-ingress-nginx-admission-patch
       labels:
-        helm.sh/chart: ingress-nginx-4.14.1
+        helm.sh/chart: ingress-nginx-4.14.3
         app.kubernetes.io/name: ingress-nginx
         app.kubernetes.io/instance: ingress-with-controller.yaml
-        app.kubernetes.io/version: "1.14.1"
+        app.kubernetes.io/version: "1.14.3"
         app.kubernetes.io/part-of: ingress-nginx
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/component: admission-webhook
     spec:
       containers:
         - name: patch
-          image: registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.5@sha256:03a00eb0e255e8a25fa49926c24cde0f7e12e8d072c445cdf5136ec78b546285
+          image: registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.7@sha256:7c74a715af2c94cb734785b4d3ea1357b4f02b88e1e123c622a9cb68b62f669c
           imagePullPolicy: IfNotPresent
           args:
             - patch

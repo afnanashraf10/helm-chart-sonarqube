@@ -6,7 +6,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-search
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 spec:
@@ -23,7 +23,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-app
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 spec:
@@ -40,7 +40,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-monitoring-passcode
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 type: Opaque
@@ -54,7 +54,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 type: Opaque
@@ -68,7 +68,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-jwt
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 type: Opaque
@@ -83,7 +83,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-http-proxies
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 type: Opaque
@@ -102,7 +102,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-app-config
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 data:
@@ -115,7 +115,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-search-config
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 data:
@@ -128,7 +128,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-init-fs
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 data:
@@ -144,7 +144,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-init-sysctl
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 data:
@@ -191,7 +191,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-install-plugins
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 data:
@@ -204,7 +204,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-jdbc-config
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 data:
@@ -218,7 +218,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 
@@ -240,7 +240,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-headless
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 
@@ -265,7 +265,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-search
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 
@@ -291,7 +291,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-search-headless
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 
@@ -318,7 +318,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-app
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
     app.kubernetes.io/name: duplicated-env-values.yaml
@@ -327,7 +327,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: sonarqube
     app.kubernetes.io/component: duplicated-env-values.yaml-sonarqube-dce
-    app.kubernetes.io/version: "2025.6.0-datacenter-app"
+    app.kubernetes.io/version: "2026.2.0-datacenter-app"
 spec:
   replicas: 2
   revisionHistoryLimit: 
@@ -344,9 +344,9 @@ spec:
         release: duplicated-env-values.yaml
         sonarqube.datacenter/type: "app"
       annotations:
-        checksum/plugins: b1089ae25b857afacd757d10ba29d13af038e22b9c7899b04714034890b2db62
-        checksum/config: 2af7f616142624590101b3d8e338f4697fb7b699ea3605d9851c23ac329dfa05
-        checksum/secret: 5af7f5f7f129982d7ef891287de084c2f85681cc9d6f41f661822badab87f1bb
+        checksum/plugins: d211c30b2250301a9904467865df4f8681d6a266bd1a9330a6d8a2886de98be0
+        checksum/config: 78a24c25c72b51f6c71b6b4089d2070d2e8cfab3c3340ddf5d615e4fee5680aa
+        checksum/secret: 21de5817d2ee83abececa7f379827c36523fa06cd9539e672f3fbf28e8c5916f
     spec:
       automountServiceAccountToken: false
       initContainers:
@@ -354,7 +354,7 @@ spec:
         fsGroup: 0
       containers:
         - name: sonarqube-dce
-          image: sonarqube:2025.6.0-datacenter-app
+          image: sonarqube:2026.2.0-datacenter-app
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
@@ -387,7 +387,7 @@ spec:
             - name: SONAR_LOG_JSONOUTPUT
               value: "false"
             - name: SONAR_HELM_CHART_VERSION
-              value: 2026.1.0
+              value: 2026.2.0
             - name: SONAR_CLUSTER_SEARCH_HOSTS
               value: "duplicated-env-values.yaml-sonarqube-dce-search"
             - name: SONAR_CLUSTER_KUBERNETES
@@ -423,7 +423,7 @@ spec:
               - -c
               - |-
                 host="$(hostname -i || echo '127.0.0.1')"
-                wget --no-proxy --quiet -O /dev/null --timeout=1 --header="X-Sonar-Passcode: $SONAR_WEB_SYSTEMPASSCODE" "http://${host}:9000/some/context/api/system/liveness"
+                curl --noproxy "*" -fsS -o /dev/null --max-time 1 -H "X-Sonar-Passcode: $SONAR_WEB_SYSTEMPASSCODE" "http://${host}:9000/some/context/api/system/liveness"
             failureThreshold: 6
             initialDelaySeconds: 0
             periodSeconds: 30
@@ -438,7 +438,7 @@ spec:
                 # A Sonarqube container is considered ready if the status is UP, DB_MIGRATION_NEEDED or DB_MIGRATION_RUNNING
                 # status about migration are added to prevent the node to be kill while sonarqube is upgrading the database.
                 host="$(hostname -i || echo '127.0.0.1')"
-                if wget --no-proxy -qO- http://${host}:9000/some/context/api/system/status | grep -q -e '"status":"UP"' -e '"status":"DB_MIGRATION_NEEDED"' -e '"status":"DB_MIGRATION_RUNNING"'; then
+                if curl --noproxy "*" -s http://${host}:9000/some/context/api/system/status | grep -q -e '"status":"UP"' -e '"status":"DB_MIGRATION_NEEDED"' -e '"status":"DB_MIGRATION_RUNNING"'; then
                   exit 0
                 fi
                 exit 1
@@ -500,7 +500,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-dce-search
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
     app.kubernetes.io/name: "duplicated-env-values.yaml"
@@ -509,7 +509,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: sonarqube
     app.kubernetes.io/component: duplicated-env-values.yaml-sonarqube-dce
-    app.kubernetes.io/version: "2025.6.0-datacenter-search"
+    app.kubernetes.io/version: "2026.2.0-datacenter-search"
 spec:
   podManagementPolicy : Parallel
   replicas: 3
@@ -538,15 +538,15 @@ spec:
         release: duplicated-env-values.yaml
         sonarqube.datacenter/type: "search"
       annotations:
-        checksum/init-sysctl: 92d6a8875b7ae79aa8566e55362e3a1b7012eaf6775e7cbbd65c2468c1931b14
-        checksum/init-fs: d53e0292bd2eb3873a34e2c68461352bf7197f5de104ff2e909820bf3c230c7d
-        checksum/config: 2af7f616142624590101b3d8e338f4697fb7b699ea3605d9851c23ac329dfa05
-        checksum/secret: 5af7f5f7f129982d7ef891287de084c2f85681cc9d6f41f661822badab87f1bb
+        checksum/init-sysctl: c43076ea28e885c8a317d27b8313f85ed8c798596303e101f5005fda560da8a2
+        checksum/init-fs: e93ee08bdbc2cdda57e702647bb1c1a582d3a13914fc1f3f29cd86c4a6bf2953
+        checksum/config: 78a24c25c72b51f6c71b6b4089d2070d2e8cfab3c3340ddf5d615e4fee5680aa
+        checksum/secret: 21de5817d2ee83abececa7f379827c36523fa06cd9539e672f3fbf28e8c5916f
     spec:
       automountServiceAccountToken: false
       initContainers:
         - name: init-sysctl
-          image: sonarqube:2025.6.0-datacenter-app
+          image: sonarqube:2026.2.0-datacenter-app
           imagePullPolicy: IfNotPresent
           securityContext:
             privileged: true
@@ -561,7 +561,7 @@ spec:
             - name: init-sysctl
               mountPath: /tmp/scripts/
         - name: init-fs
-          image: sonarqube:2025.6.0-datacenter-app
+          image: sonarqube:2026.2.0-datacenter-app
           imagePullPolicy: IfNotPresent
           securityContext:
             capabilities:
@@ -602,7 +602,7 @@ spec:
         fsGroup: 0
       containers:
         - name: sonarqube-dce-search
-          image: "sonarqube:2025.6.0-datacenter-search"
+          image: "sonarqube:2026.2.0-datacenter-search"
           imagePullPolicy: IfNotPresent
           ports:
             - name: search-port
@@ -640,7 +640,7 @@ spec:
                 #!/bin/bash
                 # A Sonarqube search node container is considered live if http call returns 200
                 host="$(hostname -i || echo '127.0.0.1')"
-                if wget --auth-no-challenge --no-proxy -qO- "http://${host}:9001/_cluster/health?local=true" | grep -q -e '"status":"green"' -e '"status":"yellow"'; then
+                if curl --noproxy "*" -sS "http://${host}:9001/_cluster/health?local=true" | grep -q -e '"status":"green"' -e '"status":"yellow"'; then
                   exit 0
                 fi
                 exit 1
@@ -657,7 +657,7 @@ spec:
                 #!/bin/bash
                 # A Sonarqube search node container is considered ready if the status of embedded ES is green or yellow
                 host="$(hostname -i || echo '127.0.0.1')"
-                if wget --auth-no-challenge --no-proxy -qO- "http://${host}:9001/_cluster/health?wait_for_status=yellow&timeout=50s" | grep -q -e '"status":"green"' -e '"status":"yellow"'; then
+                if curl --noproxy "*" -s "http://${host}:9001/_cluster/health?wait_for_status=yellow&timeout=50s" | grep -q -e '"status":"green"' -e '"status":"yellow"'; then
                   exit 0
                 fi
                 exit 1
@@ -674,7 +674,7 @@ spec:
                 #!/bin/bash
                 # A Sonarqube search node container is considered started if http call returns 200
                 host="$(hostname -i || echo '127.0.0.1')"
-                if wget --auth-no-challenge --no-proxy -qO- "http://${host}:9001/_cluster/health?local=true" | grep -q -e '"status":"green"' -e '"status":"yellow"'; then
+                if curl --noproxy "*" -sS "http://${host}:9001/_cluster/health?local=true" | grep -q -e '"status":"green"' -e '"status":"yellow"'; then
                   exit 0
                 fi
                 exit 1
@@ -739,23 +739,25 @@ metadata:
     "sidecar.istio.io/inject": "false"
   labels:
     app: sonarqube-dce
-    chart: sonarqube-dce-2026.1.0
+    chart: sonarqube-dce-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 spec:
   automountServiceAccountToken: false
   containers:
     - name: duplicated-env-values.yaml-ui-test
-      image: "sonarqube:2025.6.0-datacenter-app"
+      image: "sonarqube:2026.2.0-datacenter-app"
       imagePullPolicy: IfNotPresent
-      command: ['wget']
+      command: ['curl']
       args: [
         '--retry-connrefused',
-        '--waitretry=1',
-        '--timeout=5',
-        '-t',
+        '--retry',
         '1200',
-        '-qO-',
+        '--retry-delay',
+        '1',
+        '--max-time',
+        '5',
+        '-s',
         'duplicated-env-values.yaml-sonarqube-dce:9000/api/system/status'
         ]
       resources:

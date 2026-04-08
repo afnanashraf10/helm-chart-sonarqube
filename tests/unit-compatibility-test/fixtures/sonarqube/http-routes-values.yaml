@@ -7,7 +7,7 @@ metadata:
   name: http-routes-values.yaml-sonarqube-monitoring-passcode
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: http-routes-values.yaml
     heritage: Helm
 type: Opaque
@@ -22,7 +22,7 @@ metadata:
   name: http-routes-values.yaml-sonarqube-http-proxies
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: http-routes-values.yaml
     heritage: Helm
 type: Opaque
@@ -41,7 +41,7 @@ metadata:
   name: http-routes-values.yaml-sonarqube-config
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: http-routes-values.yaml
     heritage: Helm
 data:
@@ -54,7 +54,7 @@ metadata:
   name: http-routes-values.yaml-sonarqube-init-sysctl
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: http-routes-values.yaml
     heritage: Helm
 data:
@@ -101,7 +101,7 @@ metadata:
   name: http-routes-values.yaml-sonarqube-install-plugins
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: http-routes-values.yaml
     heritage: Helm
 data:
@@ -114,7 +114,7 @@ metadata:
   name: http-routes-values.yaml-sonarqube
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: http-routes-values.yaml
     heritage: Helm
 spec:
@@ -135,7 +135,7 @@ metadata:
   name: http-routes-values.yaml-sonarqube
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: http-routes-values.yaml
     heritage: Helm
     app.kubernetes.io/name: http-routes-values.yaml
@@ -143,7 +143,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: sonarqube
     app.kubernetes.io/component: http-routes-values.yaml-sonarqube
-    app.kubernetes.io/version: "2025.6.0-enterprise"
+    app.kubernetes.io/version: "2026.2.0-enterprise"
 spec:
   replicas: 1
   revisionHistoryLimit: 10
@@ -155,10 +155,10 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: bf9cfe21e4b47c979da260f4c3492423c095d9d36ac3770f938ff905170ca6eb
-        checksum/init-sysctl: 231119600500d17e6a511c0bdbac304922f782be423351d61d3d27e1bc814e7a
-        checksum/plugins: fdc4e0604ee91bc2cfa320595b60a5cd65fff3b5e7ee00e51de81c4a0ad9aeea
-        checksum/secret: f63e037e27922f314202712e84f42ffe8cca7d510f2a5a031bd2ee3f1f22e033
+        checksum/config: d8e03df8bd88d69d02bdbb79eb3cef685f5d4aa5e32f51fe3eb6c6cbc147cf00
+        checksum/init-sysctl: ea79bef869e505239d46a23bc4b51b0c731c47dea6a68b64a12d787af7a99ed7
+        checksum/plugins: 3b04839b892ed833b357fe1699a5d036590b4dbe4cb52b593749c40d911a778c
+        checksum/secret: e7b21e0d3d13a270198a903bf7a91f56cbded0ecd23f4216ade9fcf1777db565
       labels:
         app: sonarqube
         release: http-routes-values.yaml
@@ -168,7 +168,7 @@ spec:
         fsGroup: 0
       initContainers:
         - name: init-sysctl
-          image: sonarqube:2025.6.0-enterprise
+          image: sonarqube:2026.2.0-enterprise
           imagePullPolicy: IfNotPresent
           securityContext:
             privileged: true
@@ -187,7 +187,7 @@ spec:
               value: ""
       containers:
         - name: sonarqube
-          image: sonarqube:2025.6.0-enterprise
+          image: sonarqube:2026.2.0-enterprise
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
@@ -204,7 +204,7 @@ spec:
               memory: 2048M
           env:
             - name: SONAR_HELM_CHART_VERSION
-              value: 2026.1.0
+              value: 2026.2.0
             - name: SONAR_WEB_SYSTEMPASSCODE
               valueFrom:
                 secretKeyRef:
@@ -223,7 +223,7 @@ spec:
               - sh
               - -c
               - |
-                wget --no-proxy --quiet -O /dev/null --timeout=1 --header="X-Sonar-Passcode: $SONAR_WEB_SYSTEMPASSCODE" "http://localhost:9000/api/system/liveness"
+                curl --noproxy "*" -fsS -o /dev/null --max-time 1 -H "X-Sonar-Passcode: $SONAR_WEB_SYSTEMPASSCODE" "http://localhost:9000/api/system/liveness"
             failureThreshold: 6
             initialDelaySeconds: 60
             periodSeconds: 30
@@ -237,7 +237,7 @@ spec:
                 #!/bin/bash
                 # A Sonarqube container is considered ready if the status is UP, DB_MIGRATION_NEEDED or DB_MIGRATION_RUNNING
                 # status about migration are added to prevent the node to be kill while SonarQube is upgrading the database.
-                if wget --no-proxy -qO- http://localhost:9000/api/system/status | grep -q -e '"status":"UP"' -e '"status":"DB_MIGRATION_NEEDED"' -e '"status":"DB_MIGRATION_RUNNING"'; then
+                if curl --noproxy "*" -s http://localhost:9000/api/system/status | grep -q -e '"status":"UP"' -e '"status":"DB_MIGRATION_NEEDED"' -e '"status":"DB_MIGRATION_RUNNING"'; then
                   exit 0
                 fi
                 exit 1
@@ -302,7 +302,7 @@ metadata:
   name: http-routes-values.yaml-sonarqube-http-route
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: http-routes-values.yaml
     heritage: Helm
 spec:
@@ -311,6 +311,7 @@ spec:
     namespace: my-gateway-namespace
   hostnames:
     - sonarqube.your-org.com
+    - sonarqube2.your-org.com
   rules:
     - backendRefs:
       - name: http-routes-default-values.yaml-sonarqube
@@ -331,23 +332,25 @@ metadata:
     "sidecar.istio.io/inject": "false"
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: http-routes-values.yaml
     heritage: Helm
 spec:
   automountServiceAccountToken: false
   containers:
     - name: http-routes-values.yaml-ui-test
-      image: "sonarqube:2025.6.0-enterprise"
+      image: "sonarqube:2026.2.0-enterprise"
       imagePullPolicy: IfNotPresent
-      command: ['wget']
+      command: ['curl']
       args: [
         '--retry-connrefused',
-        '--waitretry=1',
-        '--timeout=5',
-        '-t',
+        '--retry',
         '12',
-        '-qO-',
+        '--retry-delay',
+        '1',
+        '--max-time',
+        '5',
+        '-s',
         'http-routes-values.yaml-sonarqube:9000/api/system/status'
         ]
       resources:

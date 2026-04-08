@@ -7,7 +7,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-monitoring-passcode
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 type: Opaque
@@ -22,7 +22,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-http-proxies
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 type: Opaque
@@ -41,7 +41,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-config
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 data:
@@ -54,7 +54,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-init-sysctl
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 data:
@@ -101,7 +101,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-install-plugins
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 data:
@@ -114,7 +114,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-prometheus-ce-config
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 data:
@@ -129,7 +129,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube-prometheus-config
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 data:
@@ -144,7 +144,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 spec:
@@ -165,7 +165,7 @@ metadata:
   name: duplicated-env-values.yaml-sonarqube
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
     app.kubernetes.io/name: duplicated-env-values.yaml
@@ -173,7 +173,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: sonarqube
     app.kubernetes.io/component: duplicated-env-values.yaml-sonarqube
-    app.kubernetes.io/version: "2025.6.0-enterprise"
+    app.kubernetes.io/version: "2026.2.0-enterprise"
 spec:
   replicas: 1
   revisionHistoryLimit: 10
@@ -185,12 +185,12 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: 3b1a1bb00fc970b903a147f76673940daea4a11096461f35d3fbf6b76933bdfe
-        checksum/init-sysctl: 983bab4f775bef5c947ed29f9706da6ad6f96546a69fe95969bd34db07ad5985
-        checksum/plugins: 8e1016d82a91e8031a3e022b9c81dbf2b55c16c6a405102aa108f3a5e185154a
-        checksum/secret: c954f3e7aa4ee83bddaf155fb09494beac8057dd8f5ae0f4cc60b1d9921c74f7
-        checksum/prometheus-config: 610b6602aa6f06beae9eb4394b2e26c9eb7fb30e253f144d4eefca3a6b9917d0
-        checksum/prometheus-ce-config: 8b28d7e3ec17bd1e76d9b946ccc8c169c53c8570eefd2230b26257b49b084947
+        checksum/config: f81d9bbf609af0fbc42db90f732095652919d1cdde916684d863d49b562f0023
+        checksum/init-sysctl: b7769c8f198554dec42e332f56c7b1e284051fabfe05153ac4453af8f41d0802
+        checksum/plugins: 37d759622b155d4d168699e0baad9b8158959fd6e657891d12a02902024cbd52
+        checksum/secret: 1a24e5969cbc22af928332d57891738fc916b47a23d7629510a46392c47dc220
+        checksum/prometheus-config: 56f2a65607a187759a4c7edbf90636535c745b0ffdc0fdfb3b076a738b162f97
+        checksum/prometheus-ce-config: 22999dbdb4049d5796019d419871d641dc78cad8cd081f24eee8121af88c32c2
       labels:
         app: sonarqube
         release: duplicated-env-values.yaml
@@ -200,7 +200,7 @@ spec:
         fsGroup: 0
       initContainers:
         - name: init-sysctl
-          image: sonarqube:2025.6.0-enterprise
+          image: sonarqube:2026.2.0-enterprise
           imagePullPolicy: IfNotPresent
           securityContext:
             privileged: true
@@ -225,7 +225,7 @@ spec:
               value: -javaagent:/opt/sonarqube/data/jmx_prometheus_javaagent.jar=8001:/opt/sonarqube/conf/prometheus-ce-config.yaml
                 -Xms2G -Xmx2G -DsomeOption=some/Value
         - name: inject-prometheus-exporter
-          image: sonarqube:2025.6.0-enterprise
+          image: sonarqube:2026.2.0-enterprise
           imagePullPolicy: IfNotPresent
           securityContext:
             allowPrivilegeEscalation: false
@@ -275,7 +275,7 @@ spec:
                 -Xms2G -Xmx2G -DsomeOption=some/Value
       containers:
         - name: sonarqube
-          image: sonarqube:2025.6.0-enterprise
+          image: sonarqube:2026.2.0-enterprise
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
@@ -298,7 +298,7 @@ spec:
               memory: 2048M
           env:
             - name: SONAR_HELM_CHART_VERSION
-              value: 2026.1.0
+              value: 2026.2.0
             - name: SONAR_WEB_SYSTEMPASSCODE
               valueFrom:
                 secretKeyRef:
@@ -324,7 +324,7 @@ spec:
               - sh
               - -c
               - |
-                wget --no-proxy --quiet -O /dev/null --timeout=1 --header="X-Sonar-Passcode: $SONAR_WEB_SYSTEMPASSCODE" "http://localhost:9000/some/context/api/system/liveness"
+                curl --noproxy "*" -fsS -o /dev/null --max-time 1 -H "X-Sonar-Passcode: $SONAR_WEB_SYSTEMPASSCODE" "http://localhost:9000/some/context/api/system/liveness"
             failureThreshold: 6
             initialDelaySeconds: 60
             periodSeconds: 30
@@ -338,7 +338,7 @@ spec:
                 #!/bin/bash
                 # A Sonarqube container is considered ready if the status is UP, DB_MIGRATION_NEEDED or DB_MIGRATION_RUNNING
                 # status about migration are added to prevent the node to be kill while SonarQube is upgrading the database.
-                if wget --no-proxy -qO- http://localhost:9000/some/context/api/system/status | grep -q -e '"status":"UP"' -e '"status":"DB_MIGRATION_NEEDED"' -e '"status":"DB_MIGRATION_RUNNING"'; then
+                if curl --noproxy "*" -s http://localhost:9000/some/context/api/system/status | grep -q -e '"status":"UP"' -e '"status":"DB_MIGRATION_NEEDED"' -e '"status":"DB_MIGRATION_RUNNING"'; then
                   exit 0
                 fi
                 exit 1
@@ -425,23 +425,25 @@ metadata:
     "sidecar.istio.io/inject": "false"
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: duplicated-env-values.yaml
     heritage: Helm
 spec:
   automountServiceAccountToken: false
   containers:
     - name: duplicated-env-values.yaml-ui-test
-      image: "sonarqube:2025.6.0-enterprise"
+      image: "sonarqube:2026.2.0-enterprise"
       imagePullPolicy: IfNotPresent
-      command: ['wget']
+      command: ['curl']
       args: [
         '--retry-connrefused',
-        '--waitretry=1',
-        '--timeout=5',
-        '-t',
+        '--retry',
         '12',
-        '-qO-',
+        '--retry-delay',
+        '1',
+        '--max-time',
+        '5',
+        '-s',
         'duplicated-env-values.yaml-sonarqube:9000/api/system/status'
         ]
       resources:

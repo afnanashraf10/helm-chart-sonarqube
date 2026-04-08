@@ -7,7 +7,7 @@ metadata:
   name: ingress-values.yaml-sonarqube-monitoring-passcode
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: ingress-values.yaml
     heritage: Helm
 type: Opaque
@@ -22,7 +22,7 @@ metadata:
   name: ingress-values.yaml-sonarqube-http-proxies
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: ingress-values.yaml
     heritage: Helm
 type: Opaque
@@ -41,7 +41,7 @@ metadata:
   name: ingress-values.yaml-sonarqube-config
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: ingress-values.yaml
     heritage: Helm
 data:
@@ -54,7 +54,7 @@ metadata:
   name: ingress-values.yaml-sonarqube-init-sysctl
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: ingress-values.yaml
     heritage: Helm
 data:
@@ -101,7 +101,7 @@ metadata:
   name: ingress-values.yaml-sonarqube-install-plugins
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: ingress-values.yaml
     heritage: Helm
 data:
@@ -114,7 +114,7 @@ metadata:
   name: ingress-values.yaml-sonarqube
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: ingress-values.yaml
     heritage: Helm
 spec:
@@ -135,7 +135,7 @@ metadata:
   name: ingress-values.yaml-sonarqube
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: ingress-values.yaml
     heritage: Helm
     app.kubernetes.io/name: ingress-values.yaml
@@ -143,7 +143,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: sonarqube
     app.kubernetes.io/component: ingress-values.yaml-sonarqube
-    app.kubernetes.io/version: "2025.6.0-enterprise"
+    app.kubernetes.io/version: "2026.2.0-enterprise"
 spec:
   replicas: 1
   revisionHistoryLimit: 10
@@ -155,10 +155,10 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: 9c8ccc62469fd19bb0974e306ec87af015f9e00c8b76219eb07e32a1ed2aab5b
-        checksum/init-sysctl: 3aada66806fe1d717036fca66b9a8c9b15e7dbead39a5c9f477ea9a65de7393b
-        checksum/plugins: 06ba74120d20ebd0fe0c7f86a1703cee67f78cb6151a39f83ae63bba6720d813
-        checksum/secret: a4e5c79cf2bd216a4de0d2a1439ace4c24fda942da72ba3cb6e0e7bc09608c64
+        checksum/config: b6aedbe940e327013190e055a5faa137f4d3ff0a4699f19aac3ebf151ac9f95e
+        checksum/init-sysctl: 2307e6f66f298acdb79187508c621f79f0d15cd2cf57276816af8e29ff63e4e9
+        checksum/plugins: daf51322c9d8715c3074f562bfc8c69c7972210c48d1e09563ece2cf2b0ff1c6
+        checksum/secret: 10c77e0dc6f0548c0bbac5431fa8ee84b688bebfb2d8b2422121a5103807b426
       labels:
         app: sonarqube
         release: ingress-values.yaml
@@ -168,7 +168,7 @@ spec:
         fsGroup: 0
       initContainers:
         - name: init-sysctl
-          image: sonarqube:2025.6.0-enterprise
+          image: sonarqube:2026.2.0-enterprise
           imagePullPolicy: IfNotPresent
           securityContext:
             privileged: true
@@ -187,7 +187,7 @@ spec:
               value: ""
       containers:
         - name: sonarqube
-          image: sonarqube:2025.6.0-enterprise
+          image: sonarqube:2026.2.0-enterprise
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
@@ -204,7 +204,7 @@ spec:
               memory: 2048M
           env:
             - name: SONAR_HELM_CHART_VERSION
-              value: 2026.1.0
+              value: 2026.2.0
             - name: SONAR_WEB_SYSTEMPASSCODE
               valueFrom:
                 secretKeyRef:
@@ -223,7 +223,7 @@ spec:
               - sh
               - -c
               - |
-                wget --no-proxy --quiet -O /dev/null --timeout=1 --header="X-Sonar-Passcode: $SONAR_WEB_SYSTEMPASSCODE" "http://localhost:9000/api/system/liveness"
+                curl --noproxy "*" -fsS -o /dev/null --max-time 1 -H "X-Sonar-Passcode: $SONAR_WEB_SYSTEMPASSCODE" "http://localhost:9000/api/system/liveness"
             failureThreshold: 6
             initialDelaySeconds: 60
             periodSeconds: 30
@@ -237,7 +237,7 @@ spec:
                 #!/bin/bash
                 # A Sonarqube container is considered ready if the status is UP, DB_MIGRATION_NEEDED or DB_MIGRATION_RUNNING
                 # status about migration are added to prevent the node to be kill while SonarQube is upgrading the database.
-                if wget --no-proxy -qO- http://localhost:9000/api/system/status | grep -q -e '"status":"UP"' -e '"status":"DB_MIGRATION_NEEDED"' -e '"status":"DB_MIGRATION_RUNNING"'; then
+                if curl --noproxy "*" -s http://localhost:9000/api/system/status | grep -q -e '"status":"UP"' -e '"status":"DB_MIGRATION_NEEDED"' -e '"status":"DB_MIGRATION_RUNNING"'; then
                   exit 0
                 fi
                 exit 1
@@ -302,7 +302,7 @@ metadata:
   name: ingress-values.yaml-sonarqube
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: ingress-values.yaml
     heritage: Helm
     traffic-type: external
@@ -339,23 +339,25 @@ metadata:
     "sidecar.istio.io/inject": "false"
   labels:
     app: sonarqube
-    chart: sonarqube-2026.1.0
+    chart: sonarqube-2026.2.0
     release: ingress-values.yaml
     heritage: Helm
 spec:
   automountServiceAccountToken: false
   containers:
     - name: ingress-values.yaml-ui-test
-      image: "sonarqube:2025.6.0-enterprise"
+      image: "sonarqube:2026.2.0-enterprise"
       imagePullPolicy: IfNotPresent
-      command: ['wget']
+      command: ['curl']
       args: [
         '--retry-connrefused',
-        '--waitretry=1',
-        '--timeout=5',
-        '-t',
+        '--retry',
         '12',
-        '-qO-',
+        '--retry-delay',
+        '1',
+        '--max-time',
+        '5',
+        '-s',
         'ingress-values.yaml-sonarqube:9000/api/system/status'
         ]
       resources:

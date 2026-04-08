@@ -1,10 +1,18 @@
 # SonarQube Chart Changelog
 All changes to this chart will be documented in this file.
 
+## [2026.2.0]
+* Upgrade Chart's version to 2026.2.0
+* Upgrade SonarQube Server to 2026.2.0
+* Update ingress-nginx subchart to 4.14.3
+* Replace wget with curl in health probes
+* Use -fS flag in curl to show errors in liveness and startup probes
+
 ## [2026.1.0]
-* Update Chart's version to 2026.1.0
+* Upgrade SonarQube Server to 2026.1.0
+* Upgrade Chart's version to 2026.1.0
 * Support Kubernetes v1.35
-* Remove the postgresql dependency
+* Remove the PostgreSQL embedded chart dependency and related settings
 * Deprecate `jdbcOverwrite.enabled` as it is now required to connect to an external database
 * Support Openshift v4.20
 * Update ingress-nginx subchart to v4.14.1
